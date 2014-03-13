@@ -24,10 +24,12 @@ namespace Sailboat
         }
         public void Logic()
         {
+            // The wind wrapped 180 for when waypoint into the wind
             double rotateWind = myMath.Wrap(mySailboat.WindDirection + Math.PI, 2 * Math.PI);            
             switch (Attack)
             {
                 case SailingTechnique.Setup:
+                    // Tack
                     if (Math.Abs(rotateWind - mySailboat.Heading) < (Math.PI / 6.0))
                     {
                         Attack = SailingTechnique.CloseHaul;
@@ -36,12 +38,14 @@ namespace Sailboat
                         //Bearing = Heading;
                         //Bearing = TackDirection(rotateWind, Orientation);
                     }
+                    // With the wind
                     else
                     {
                         Attack = SailingTechnique.Direct;
                         Direction(mySailboat.Heading, mySailboat.Orientation);
                         mySailboat.Bearing = mySailboat.Heading;
                     }
+                    // TODO Reaching case
                     break;
                 case SailingTechnique.CloseHaul:
                     double distanceToTarget = Math.Sqrt(Math.Pow(mySailboat.Lattitude - mySailboat.HeadingY, 2) + Math.Pow(mySailboat.Longitude - mySailboat.HeadingX, 2)) / 10.0;
@@ -72,6 +76,7 @@ namespace Sailboat
                     }
                     break;
             }
+            // Check if target reached
             if (Math.Abs(mySailboat.Lattitude - mySailboat.HeadingY) > 10 || Math.Abs(mySailboat.Longitude - mySailboat.HeadingX) > 10)
             {
                 if (Math.Abs(mySailboat.Orientation - mySailboat.Bearing) > Math.PI / 180)
@@ -82,9 +87,12 @@ namespace Sailboat
                 mySailboat.Longitude = mySailboat.Longitude - Math.Sin(mySailboat.Orientation);
                 mySailboat.DrawBoat();
             }
+            // Target reached
+            // TODO Go to next waypoint
             else
             { mySailboat.OpModeChanged(true); }
         }
+        // Determine which direction is closest to target
         void Direction(double head, double orient)
         {
             double Rotation = myMath.Wrap(head - orient, 2 * Math.PI);
