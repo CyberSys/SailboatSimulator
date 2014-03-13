@@ -70,7 +70,8 @@ namespace Sailboat
             Pen myRed = new Pen(Color.Red, 4);
             Pen myBlack = new Pen(Color.Black, 6);
             Graphics g = Graphics.FromImage(bmp);
-            g.Clear(Color.White);
+            if(cboxClear.Checked==false)
+                g.Clear(Color.White);
             //Boat
             Point[] boat = new Point[6];
             boat[0] = new Point((int)(Longitude + (30 * Math.Sin(Orientation))), (int)(Lattitude + (30 * Math.Cos(Orientation))));

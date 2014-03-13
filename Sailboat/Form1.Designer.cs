@@ -90,6 +90,7 @@
             this.pboxOcean = new System.Windows.Forms.PictureBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.cboxClear = new System.Windows.Forms.CheckBox();
             this.gboxHeading.SuspendLayout();
             this.pnlHeadDirection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeadDegrees)).BeginInit();
@@ -389,6 +390,7 @@
             // 
             // gBoxOpMode
             // 
+            this.gBoxOpMode.Controls.Add(this.cboxClear);
             this.gBoxOpMode.Controls.Add(this.rbOpRun);
             this.gBoxOpMode.Controls.Add(this.tbOpRun);
             this.gBoxOpMode.Controls.Add(this.rbOpSetup);
@@ -850,11 +852,21 @@
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 10;
             // 
+            // cboxClear
+            // 
+            this.cboxClear.AutoSize = true;
+            this.cboxClear.Location = new System.Drawing.Point(6, 88);
+            this.cboxClear.Name = "cboxClear";
+            this.cboxClear.Size = new System.Drawing.Size(56, 17);
+            this.cboxClear.TabIndex = 11;
+            this.cboxClear.Text = "Smear";
+            this.cboxClear.UseVisualStyleBackColor = true;
+            // 
             // SailingSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 789);
+            this.ClientSize = new System.Drawing.Size(794, 733);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.pboxOcean);
@@ -982,6 +994,7 @@
         private System.Windows.Forms.Label lblBearing;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.CheckBox cboxClear;
     }
 }
 

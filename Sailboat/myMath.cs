@@ -22,9 +22,7 @@ namespace Sailboat
         {
             input %= length;
             if (input < 0)
-            {
                 input += length;
-            }
             return input;
         }
     }

@@ -7,3 +7,12 @@ E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.csproj.Ge
 E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.exe
 E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.pdb
 E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.SailingSimulator.resources
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe.config
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.exe
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.pdb
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\bin\Debug\Sailboat.pdb
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csprojResolveAssemblyReference.cache
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.SailingSimulator.resources
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.Properties.Resources.resources
+C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csproj.GenerateResource.Cache
