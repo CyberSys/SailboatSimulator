@@ -7,6 +7,7 @@ E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.csproj.Ge
 E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.exe
 E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.pdb
 E:\Programming\VISUAL STUDIO\2014\Sailboat\Sailboat\obj\Debug\Sailboat.SailingSimulator.resources
+<<<<<<< HEAD
 C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe.config
 C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.exe
 C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.pdb
@@ -16,3 +17,14 @@ C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csprojR
 C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.SailingSimulator.resources
 C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.Properties.Resources.resources
 C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csproj.GenerateResource.Cache
+=======
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe.config
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.exe
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.pdb
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\bin\Debug\Sailboat.pdb
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.SailingSimulator.resources
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.Properties.Resources.resources
+\\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csproj.GenerateResource.Cache
+>>>>>>> Comments added
