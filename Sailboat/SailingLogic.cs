@@ -17,7 +17,7 @@ namespace Sailboat
         SailingTechnique Attack = SailingTechnique.Setup;
         enum DirectionType { Port, Starboard };
         DirectionType AttackDirection = DirectionType.Port;
-        private const double TackWidth = 2.0;
+        private const double TackWidth = 5.0;
         public void Reset()
         {
             Attack = SailingTechnique.Setup;
@@ -28,7 +28,7 @@ namespace Sailboat
             switch (Attack)
             {
                 case SailingTechnique.Setup:
-                    if (Math.Abs(rotateWind - mySailboat.Heading) < (Math.PI / 6.0))
+                    if (Invert(rotateWind - mySailboat.Heading,2*Math.PI) < (Math.PI / 6.0))
                     {
                         Attack = SailingTechnique.CloseHaul;
                         mySailboat.Bearing = rotateWind + TackDirection(rotateWind);
@@ -47,14 +47,18 @@ namespace Sailboat
                     double distanceToTarget = Math.Sqrt(Math.Pow(mySailboat.Lattitude - mySailboat.HeadingY, 2) + Math.Pow(mySailboat.Longitude - mySailboat.HeadingX, 2)) / 10.0;
                     double distanceAfterMoving = Math.Sqrt(Math.Pow((mySailboat.Lattitude - Math.Cos(mySailboat.Orientation)) - mySailboat.HeadingY, 2) + Math.Pow((mySailboat.Longitude - Math.Sin(mySailboat.Orientation)) - mySailboat.HeadingX, 2)) / 10.0;
                     double Adjustment = Math.Sin(mySailboat.Heading-rotateWind);
-                    double tempY = mySailboat.Lattitude - (Math.Cos(mySailboat.Orientation));
-                    double tempX = mySailboat.Longitude - Math.Sin(mySailboat.Orientation);
-                    if (Math.Abs(rotateWind - mySailboat.Heading) > Math.PI / 5)
+                    double dx = mySailboat.HeadingX - (mySailboat.Longitude - Math.Sin(mySailboat.Orientation));
+                    double dy = (mySailboat.Lattitude - (Math.Cos(mySailboat.Orientation))) - mySailboat.HeadingY;
+                    double tempTheta = ((Math.Atan((dy) / (dx)) + Math.PI * Convert.ToInt64((dy < 0 && dx < 0) || (dy > 0 && dx < 0))) - (Math.PI / 2));
+                    double Adjustment2 = Math.Sin(tempTheta-rotateWind);
+                    double Exit = rotateWind - mySailboat.Heading;
+
+                    if (Invert(rotateWind - mySailboat.Heading,2*Math.PI) > Math.PI / 5)
                     {
                         Attack = SailingTechnique.Setup;
                     }
-                    else if(Math.Abs(distanceToTarget*Adjustment)>TackWidth)
-                        //&& Math.Abs((distanceToTarget-distanceAfterMoving)*Adjustment))
+                    else if(Math.Abs(distanceToTarget*Adjustment)>TackWidth
+                            && Math.Abs(distanceToTarget*Adjustment)<Math.Abs(distanceAfterMoving*Adjustment2))
                     {
                         mySailboat.Bearing = rotateWind - TackDirection(rotateWind);
                         Direction(mySailboat.Bearing, mySailboat.Orientation);
@@ -95,16 +99,25 @@ namespace Sailboat
         }
         double TackDirection(double wind)
         {
-            double TackStarboard = myMath.Wrap((wind + Math.PI / 6) - mySailboat.Orientation, 2 * Math.PI);
-            double TackPort = myMath.Wrap((wind - Math.PI / 6) - mySailboat.Orientation, 2 * Math.PI);
-            if (TackStarboard >= Math.PI)
-                TackStarboard = 2 * Math.PI - TackStarboard;
-            if (TackPort >= Math.PI)
-                TackPort = 2 * Math.PI - TackPort;
+            double TackStarboard = Invert((wind + Math.PI / 6) - mySailboat.Orientation, 2 * Math.PI);
+            double TackPort = Invert((wind - Math.PI / 6) - mySailboat.Orientation, 2 * Math.PI);
+            //if (TackStarboard >= Math.PI)
+            //    TackStarboard = 2 * Math.PI - TackStarboard;
+            //Invert(TackStarboard, Math.PI);
+            //Invert(TackPort, Math.PI);
+            //if (TackPort >= Math.PI)
+            //    TackPort = 2 * Math.PI - TackPort;
             if (TackPort < TackStarboard)
                 return - Math.PI / 6;
             else
                 return Math.PI / 6;
+        }
+        double Invert(double x,double length)
+        {
+            x = myMath.Wrap(x, length);
+            if(x>=(length/2.0))
+                return length - x;
+            return x;
         }
     }
 }
