@@ -28,3 +28,12 @@ C:\Users\Ryan\Source\Repos\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csproj.
 \\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.Properties.Resources.resources
 \\psf\Home\Desktop\GitHub\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csproj.GenerateResource.Cache
 >>>>>>> Comments added
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe.config
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\obj\Debug\Sailboat.exe
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\obj\Debug\Sailboat.pdb
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\bin\Debug\Sailboat.exe
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\bin\Debug\Sailboat.pdb
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csprojResolveAssemblyReference.cache
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\obj\Debug\Sailboat.SailingSimulator.resources
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\obj\Debug\Sailboat.Properties.Resources.resources
+E:\Programming\VISUAL STUDIO\GIT REPOS\SailboatSimulator\Sailboat\obj\Debug\Sailboat.csproj.GenerateResource.Cache

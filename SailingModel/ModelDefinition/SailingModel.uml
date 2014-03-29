@@ -1,0 +1,1257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="1335d72b-44f0-49c2-ab00-c0375789af29"
+  name="SailingModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="44557bb2-e4b6-431a-9801-7657aa4c4df9">
+      <body>When Target is within 30 degrees of upwind</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="98a9ef90-29a5-47be-9c3b-344088da9229"
+          LastKnownName="Close Reach"
+          LastKnownLocation="SailingModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="a4a285aa-dc31-488d-8b1c-7b4d09137d30">
+      <body>When Target is within 30 degrees of downwind</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="692c558f-3df8-4bb2-a94d-812cb7270261"
+          LastKnownName="Downwind Reach"
+          LastKnownLocation="SailingModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="78a25fba-ce65-4837-90b8-fda9dc3574f7">
+      <body>All other Sailing Cases</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="22d8c0a1-6911-4df9-a07e-7793a9b5da6b"
+          LastKnownName="Direct Path"
+          LastKnownLocation="SailingModel.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="75f4e1d3-435d-48b0-aefa-fb716f3415e2">
+      <body>Determine the best course  from current location to waypoint</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="6b1f2b42-05b6-461d-a8b4-86fd05a60a96"
+          LastKnownName="Calculate Bearing"
+          LastKnownLocation="SailingModel.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="7074b352-0b0a-4068-9d26-f2ba7648dff1"
+        name="UMLSailingActivityDiagram"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="3093aec0-c1b2-4b58-a2e3-e3120fa2200d"
+            name="Startup"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="11c3fffc-b700-41b4-b596-ea813d373f2c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="08d49aea-3f66-4c4f-a8da-a1a68899e882"
+                  LastKnownName="GetSensorData"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="08d49aea-3f66-4c4f-a8da-a1a68899e882"
+            name="GetSensorData"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b9599f03-72df-4793-b269-aa64626b3208"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7f398b38-ee6d-47ea-9a82-afd8bd27c019"
+                  LastKnownName="Which State?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="8d2495b1-b6a9-4006-821e-9b2e78e12081"
+                  name="Wind Direction"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="1a8c5521-73a8-4bd1-b19a-6657f18b2734"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="7c0647ee-9ffb-4d10-b260-9d9a38fe9b54"
+                  name="GPS"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="6f983256-7cec-4424-9be5-510987f4a443"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="cd95fff9-55bf-45bd-adcc-81133f608af5"
+                  name="Next Waypoint"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="c0c554c7-6f86-4576-afe6-e2d31e1c6c95"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction
+            Id="5e404f63-83c7-4637-ba1a-c9d79d6a2e73"
+            name="Analyze Sensor Data"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="954e8fbb-0aff-4fe5-8437-c6bb46495487"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6fa22c52-c27b-459c-8018-07f0c0a1d079"
+                  LastKnownName="Which State?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="17d58b79-2988-4fe7-82e6-745c830c33b9"
+            name="Setup Close Reach"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8a3977b7-9eae-4479-b250-ca023d264a29"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="95633f82-2248-4c7b-91be-39ba8c18b494"
+                  LastKnownName="SetState: Close Reach"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="77c99403-1a2b-41da-86a0-601dfa0171fd"
+            name="Setup Downwind Reach"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ee128a28-222f-4f43-a9b8-dd9672f77ca7"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="2b976d9d-fa2f-42e6-a53c-a87b8e3774c4"
+                  LastKnownName="SetState: Downwind Reach"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6d6c3f0e-fc51-44cc-b90c-931db79d83c3"
+            name="Setup Direct Path"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ee355aaa-088d-47b6-bd6b-9d6cb830bfbd"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="a097bc27-eb38-4d53-9a8e-8c4023b47c80"
+                  LastKnownName="SetState: Direct Path"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="8bf6e286-5dec-40f1-9d08-43a65445c86f"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e073168b-10f2-40b9-b315-566415b5e296"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6b1f2b42-05b6-461d-a8b4-86fd05a60a96"
+                  LastKnownName="Calculate Bearing"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2aab4aab-196a-457d-a11d-23de05653227"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="98a9ef90-29a5-47be-9c3b-344088da9229"
+                  LastKnownName="Close Reach"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d3e648d4-10e7-4283-acaf-b982277ee4e2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="22d8c0a1-6911-4df9-a07e-7793a9b5da6b"
+                  LastKnownName="Direct Path"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="694e0b12-fa89-42f9-9409-0efa087ac897"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="692c558f-3df8-4bb2-a94d-812cb7270261"
+                  LastKnownName="Downwind Reach"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="6b1f2b42-05b6-461d-a8b4-86fd05a60a96"
+            name="Calculate Bearing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6be22a96-c185-4d9f-8cd2-80ac5f8a1a29"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5e404f63-83c7-4637-ba1a-c9d79d6a2e73"
+                  LastKnownName="Analyze Sensor Data"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="98a9ef90-29a5-47be-9c3b-344088da9229"
+            name="Close Reach"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d1c5b4ae-a6a6-4fe5-b4dc-d3c012659aa4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="08422c20-3acb-4510-96d3-bc25e6faa119"
+                  LastKnownName="Am I Tacking?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="692c558f-3df8-4bb2-a94d-812cb7270261"
+            name="Downwind Reach"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8e7e50c5-45af-4993-979d-85c929c9fa9a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4fbc9b61-0b59-4670-ab68-61496cb969ca"
+                  LastKnownName="Am I Jibbing?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7c7da39d-1778-4944-ab20-e153b1b8f153"
+            name="Tack"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b9ca3523-cedd-4f92-88c6-c869c28390e2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dc284353-b07c-4e9c-9f25-479919e4cf2f"
+                  LastKnownName="Exit Conditions?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="22d8c0a1-6911-4df9-a07e-7793a9b5da6b"
+            name="Direct Path"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d438cddb-7179-495b-ba0d-8565e4d700bd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2ccfe40b-a072-4c51-8b3b-fc1670a4ab0c"
+                  LastKnownName="Exit Conditions?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="ad076b90-e732-43b9-9381-363a1fc32a7a"
+            name="Decision2"
+            isLeaf="false">
+            <description>Am I Tacking?</description>
+            <flowNodeTargets>
+              <controlFlow
+                Id="f81d71e5-b4ea-427a-b315-b93974566c9c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7c7da39d-1778-4944-ab20-e153b1b8f153"
+                  LastKnownName="Tack"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2c237f79-0630-4a23-adf5-9504bf963f9c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="743094a8-ec0e-4c5c-9afb-0477511ab5ea"
+                  LastKnownName="Should I Tack?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="8ffa3123-2247-40b7-9f7d-5e6c7555caff"
+            name="Decision21"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="06cef6f6-a253-49a8-bc4b-ecbe06ac3ed8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6d6c3f0e-fc51-44cc-b90c-931db79d83c3"
+                  LastKnownName="Setup Direct Path"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="dcc36315-de8e-45f0-a6d6-63ffea8d00da"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="17d58b79-2988-4fe7-82e6-745c830c33b9"
+                  LastKnownName="Setup Close Reach"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5af522ed-64e0-4ee0-90f2-7a0a4da39ddb"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="77c99403-1a2b-41da-86a0-601dfa0171fd"
+                  LastKnownName="Setup Downwind Reach"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="57251bbf-1915-4439-bb95-b1bc95e17629"
+            name="Decision4"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="58b7be90-8b87-4afe-80a8-91bc315a290c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="703c97b9-b23c-49a3-ac94-4588d01eb67f"
+                  LastKnownName="Merge11"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="27e8066f-0e8d-49a3-ac87-15a17a6705d8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="41bb51ca-1ebc-488c-ad3e-1f2332aca210"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="dc284353-b07c-4e9c-9f25-479919e4cf2f"
+            name="Exit Conditions?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="828f199e-04da-4332-aab4-48807ef3c3c7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="57251bbf-1915-4439-bb95-b1bc95e17629"
+                  LastKnownName="Decision4"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction
+            Id="a097bc27-eb38-4d53-9a8e-8c4023b47c80"
+            name="SetState: Direct Path"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="82e2218a-06e4-44fe-9466-ba3cf148fb2a"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d0d1013f-6c89-46fe-ad0e-bb469749abd9"
+                  LastKnownName="Merge12111"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="95633f82-2248-4c7b-91be-39ba8c18b494"
+            name="SetState: Close Reach"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2631cdfb-98c6-4736-b672-f37a33c4b737"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d0d1013f-6c89-46fe-ad0e-bb469749abd9"
+                  LastKnownName="Merge12111"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="2b976d9d-fa2f-42e6-a53c-a87b8e3774c4"
+            name="SetState: Downwind Reach"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="07c38984-5311-43ed-aa6a-1965087bb517"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d0d1013f-6c89-46fe-ad0e-bb469749abd9"
+                  LastKnownName="Merge12111"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <sendSignalAction
+            Id="f8737f86-145e-4dcc-976a-fea5df482909"
+            name="Set State: Calculate Bearing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d7915263-dd76-4313-a752-5f6fff14682c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="703c97b9-b23c-49a3-ac94-4588d01eb67f"
+                  LastKnownName="Merge11"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="743094a8-ec0e-4c5c-9afb-0477511ab5ea"
+            name="Should I Tack?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="23111e5b-8fef-4784-9175-a8d054645fbd"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="8d343860-8990-48dd-8022-5c2257995e59"
+                  LastKnownName="Decision41"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="8d343860-8990-48dd-8022-5c2257995e59"
+            name="Decision41"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="957d84dd-0855-4cdd-85de-07fe46ca7f89"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5119b00c-99d2-4135-be9b-b38afbd2fcf0"
+                  LastKnownName="Exit Conditions?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="8ba1131f-0ca6-406b-b346-cc31b4659834"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dee9e28d-632a-4be3-bba5-d657c2caaba3"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <sendSignalAction
+            Id="f2343306-5df5-4a6b-8c89-adc9002ca1a3"
+            name="Set State: Tack"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a6bd3d4c-2eeb-44da-a096-23cdc3d65e29"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="6ea5030d-ff34-4e49-aa00-c8f2b2fb1b9c"
+                  LastKnownName="Merge14"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="7f398b38-ee6d-47ea-9a82-afd8bd27c019"
+            name="Which State?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6efc5dc3-02a4-452d-be69-d49f7b482c75"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="8bf6e286-5dec-40f1-9d08-43a65445c86f"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="5119b00c-99d2-4135-be9b-b38afbd2fcf0"
+            name="Exit Conditions?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="eb901173-9d0f-478a-a4b3-43fadaa63ca9"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="a431a342-17b8-4357-ae71-fc2643642997"
+                  LastKnownName="Decision411"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="a431a342-17b8-4357-ae71-fc2643642997"
+            name="Decision411"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="29049f6d-9c98-470a-9a6c-43c3d403a91a"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="6ea5030d-ff34-4e49-aa00-c8f2b2fb1b9c"
+                  LastKnownName="Merge14"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="7a737aa7-1452-44f0-a458-24b252f7ccfd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f0bcecf0-ff08-49c4-8ef9-ed9512c32576"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <sendSignalAction
+            Id="75e3c449-8b3b-4316-855e-7475bb0825c1"
+            name="Set State: Calculate Bearing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="36bb36f0-7a73-49ad-bcf5-1968d1a86f3c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="6ea5030d-ff34-4e49-aa00-c8f2b2fb1b9c"
+                  LastKnownName="Merge14"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="08422c20-3acb-4510-96d3-bc25e6faa119"
+            name="Am I Tacking?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b926b1d0-315f-43fe-a0d4-667e0aac4051"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="ad076b90-e732-43b9-9381-363a1fc32a7a"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9cfb7d08-8989-4357-8cf7-574080d0d7ae"
+            name="Jib"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="64d7b6eb-ff0d-4e00-9cae-8466edec2480"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="36417157-a237-4488-ac3d-74d630d3783b"
+                  LastKnownName="Exit Conditions?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="9f8ed439-4f9b-4f40-b2ad-4d204b0ab1e9"
+            name="Decision22"
+            isLeaf="false">
+            <description>Am I Tacking?</description>
+            <flowNodeTargets>
+              <controlFlow
+                Id="9bfee834-f531-4278-b660-af69f9d9d3e3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9cfb7d08-8989-4357-8cf7-574080d0d7ae"
+                  LastKnownName="Jib"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="61569231-135b-4c9b-8c18-f2798ea0ce88"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c93c83c6-0121-480a-b14b-a012e3f61604"
+                  LastKnownName="Should I Jib?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="2dab2006-fd95-44e1-8542-78971117eb2a"
+            name="Decision42"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="426b5c63-9e57-4689-ae83-1389f5cfd604"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c775592b-f5a7-438a-b151-e14acee10b2e"
+                  LastKnownName="Merge13"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c7dd9455-29eb-4c97-b941-bc5eae2eb693"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f35f4d37-f0f1-4b20-b44f-de3123f26457"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="36417157-a237-4488-ac3d-74d630d3783b"
+            name="Exit Conditions?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="956f7a03-fc57-4f24-9d99-a1fda1797d6c"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="2dab2006-fd95-44e1-8542-78971117eb2a"
+                  LastKnownName="Decision42"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction
+            Id="ba61c8be-646b-4492-8ef8-df018a95e246"
+            name="Set State: Calculate Bearing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c2078cfe-4ffa-484e-a77a-d85b24418eb3"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c775592b-f5a7-438a-b151-e14acee10b2e"
+                  LastKnownName="Merge13"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="c93c83c6-0121-480a-b14b-a012e3f61604"
+            name="Should I Jib?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a7eb4cc3-54aa-4223-ac57-d746c9814047"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="410eb159-d574-43c6-bf8c-bd657f9655cc"
+                  LastKnownName="Decision412"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="410eb159-d574-43c6-bf8c-bd657f9655cc"
+            name="Decision412"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fa46c769-56ae-43be-a212-e3a7d4dc7e1b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="73ad9541-4eeb-474f-9d92-18296a9cc9df"
+                  LastKnownName="Exit Conditions?"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="53d4ce05-a86e-4c98-ac52-d3ff93f0673b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="05078107-2b4b-415a-afde-1c877d7982f0"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <sendSignalAction
+            Id="3e6ce152-156a-427e-b78d-b608c0bc777e"
+            name="Set State: Jib"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ac8dbcd8-e581-43f0-94b0-229be3e9ded6"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="bc09d7c5-fc62-4de1-9fbc-f501e048acae"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="73ad9541-4eeb-474f-9d92-18296a9cc9df"
+            name="Exit Conditions?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1fa8ac27-1acc-4322-9d39-a9ce83257672"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="83385c3e-07ac-44d2-b0c8-d719f84adbb0"
+                  LastKnownName="Decision4111"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="83385c3e-07ac-44d2-b0c8-d719f84adbb0"
+            name="Decision4111"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5b309b8d-4ae2-4110-8413-3cb1ab382992"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7f87440f-87b3-403e-94a6-f85c6a829610"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="ad6ea41f-0a47-404c-8480-aaeabf204d37"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="bc09d7c5-fc62-4de1-9fbc-f501e048acae"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <sendSignalAction
+            Id="607ab7d0-48dd-45d5-b107-8c0ffac6772b"
+            name="Set State: Calculate Bearing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ff930585-81bb-484c-b01c-e76cde55ea5c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="bc09d7c5-fc62-4de1-9fbc-f501e048acae"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction
+            Id="4fbc9b61-0b59-4670-ab68-61496cb969ca"
+            name="Am I Jibbing?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d95c4467-a473-452d-b2b5-5ffccdfa393c"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="9f8ed439-4f9b-4f40-b2ad-4d204b0ab1e9"
+                  LastKnownName="Decision22"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="bc09d7c5-fc62-4de1-9fbc-f501e048acae"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="90297eaf-308e-4049-82b9-2aaec1457e3a"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="3b18ab1a-75ab-48e9-9fa0-fd332bef1355"
+                  LastKnownName="Merge121"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="703c97b9-b23c-49a3-ac94-4588d01eb67f"
+            name="Merge11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="161c3f0b-ee24-4338-b814-c82276aa43db"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="6d0e20ad-f6bb-469b-8650-1ad5a9854808"
+                  LastKnownName="Merge1211"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="c775592b-f5a7-438a-b151-e14acee10b2e"
+            name="Merge13"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b37057dc-0e4a-43a0-afbf-842cbb8a9400"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="3b18ab1a-75ab-48e9-9fa0-fd332bef1355"
+                  LastKnownName="Merge121"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="3b18ab1a-75ab-48e9-9fa0-fd332bef1355"
+            name="Merge121"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5f671601-1435-4576-a85e-c9dd8c38a857"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="68d81885-1e9c-4b84-8ff6-716fd7544d53"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="6ea5030d-ff34-4e49-aa00-c8f2b2fb1b9c"
+            name="Merge14"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9a0551db-4b68-4ba9-92cd-a4bf32563ff1"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="6d0e20ad-f6bb-469b-8650-1ad5a9854808"
+                  LastKnownName="Merge1211"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="6d0e20ad-f6bb-469b-8650-1ad5a9854808"
+            name="Merge1211"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="20e9054d-a09b-4325-b5bf-c5363df2365d"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="68d81885-1e9c-4b84-8ff6-716fd7544d53"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="d0d1013f-6c89-46fe-ad0e-bb469749abd9"
+            name="Merge12111"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="74a35a29-0e99-45c2-a6f0-dfc5d3005127"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="68d81885-1e9c-4b84-8ff6-716fd7544d53"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="68d81885-1e9c-4b84-8ff6-716fd7544d53"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="73db8c63-0c98-460c-abe9-d6b361525b14"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="63b530d9-4266-4703-848c-31936c30ca31"
+                  LastKnownName="Calculate Sail Position"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode
+            Id="f50d98dc-27f3-443a-bc88-080c5912624b"
+            name="Decision421"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="450ceb71-1430-4640-a373-60d65d62c1e6"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e948c451-9b25-439c-9fc0-971b1924d17d"
+                  LastKnownName="Yes"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c3ae837e-e9b0-4c3f-9fff-eac52b78625d"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c35d5f6e-650d-4037-9f0c-a5f99f38fbfe"
+                  LastKnownName="Merge131"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <sendSignalAction
+            Id="f0efdfbe-4c25-44e6-be4c-ea059300ed4a"
+            name="Set State: Calculate Bearing"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="13367e4b-c78f-4902-90b9-9bdcab54a053"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c35d5f6e-650d-4037-9f0c-a5f99f38fbfe"
+                  LastKnownName="Merge131"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <mergeNode
+            Id="c35d5f6e-650d-4037-9f0c-a5f99f38fbfe"
+            name="Merge131"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="352c2031-a5a6-450d-b714-853899bed22d"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="68d81885-1e9c-4b84-8ff6-716fd7544d53"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="2ccfe40b-a072-4c51-8b3b-fc1670a4ab0c"
+            name="Exit Conditions?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="dc7b28f8-7aac-4acc-a898-ed9b4d67729e"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f50d98dc-27f3-443a-bc88-080c5912624b"
+                  LastKnownName="Decision421"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="dee9e28d-632a-4be3-bba5-d657c2caaba3"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="aaaa26d6-f15a-481a-bc91-cac28372902b"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="f2343306-5df5-4a6b-8c89-adc9002ca1a3"
+                  LastKnownName="Set State: Tack"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f0bcecf0-ff08-49c4-8ef9-ed9512c32576"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d9ce26a2-023f-42dd-9692-7224b605964f"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="75e3c449-8b3b-4316-855e-7475bb0825c1"
+                  LastKnownName="Set State: Calculate Bearing"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="41bb51ca-1ebc-488c-ad3e-1f2332aca210"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="eabef74e-541d-4603-bef4-30b45d82ca9a"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="f8737f86-145e-4dcc-976a-fea5df482909"
+                  LastKnownName="Set State: Calculate Bearing"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="05078107-2b4b-415a-afde-1c877d7982f0"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1b7611df-2430-4674-9cab-7698682b2dc4"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="3e6ce152-156a-427e-b78d-b608c0bc777e"
+                  LastKnownName="Set State: Jib"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="7f87440f-87b3-403e-94a6-f85c6a829610"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b3dcdd42-2cbd-46c3-9e46-508ab576dd8b"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="607ab7d0-48dd-45d5-b107-8c0ffac6772b"
+                  LastKnownName="Set State: Calculate Bearing"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f35f4d37-f0f1-4b20-b44f-de3123f26457"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e874624c-b152-4525-a2c3-53058a2da02b"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="ba61c8be-646b-4492-8ef8-df018a95e246"
+                  LastKnownName="Set State: Calculate Bearing"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e948c451-9b25-439c-9fc0-971b1924d17d"
+            name="Yes"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="75b79ede-e328-4437-8632-2f4bd08cac70"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="f0efdfbe-4c25-44e6-be4c-ea059300ed4a"
+                  LastKnownName="Set State: Calculate Bearing"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6fa22c52-c27b-459c-8018-07f0c0a1d079"
+            name="Which State?"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2717c112-c035-4cf1-88bf-eeaf2b2870ae"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="8ffa3123-2247-40b7-9f7d-5e6c7555caff"
+                  LastKnownName="Decision21"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="63b530d9-4266-4703-848c-31936c30ca31"
+            name="Calculate Sail Position"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="081b64cd-efd8-47e2-ae25-b454f5671cd2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a8d19f04-59f0-4c20-bd31-0b2710c49e4a"
+                  LastKnownName="Update Servos"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a8d19f04-59f0-4c20-bd31-0b2710c49e4a"
+            name="Update Servos"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b8662835-9384-417f-a3ff-1fa121e74f93"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bdbb738f-0a4b-4e02-8aba-004099a8f52d"
+                  LastKnownName="Output Status  to Mission Planner"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="93696948-0cff-45d7-a185-b3972810b051"
+                  name="Main Sail"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="918e342e-616d-42c6-8601-026f60a9a748"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="cf8c5e20-4fb9-46d5-ab5d-cb3e2f915741"
+                  name="Aft Sail"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="87551d1e-ac6d-4504-bd46-d151b93c0d16"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+              <opaqueActionHasOutputValues>
+                <outputPin
+                  Id="f4fbd21a-3179-40a4-b11a-71e00c11f726"
+                  name="Rudder"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="c0a70353-397b-48a5-821b-40cea934273b"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </opaqueActionHasOutputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction
+            Id="bdbb738f-0a4b-4e02-8aba-004099a8f52d"
+            name="Output Status  to Mission Planner"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e507efcb-186b-4509-9a74-0edfe1d5261f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="08d49aea-3f66-4c4f-a8da-a1a68899e882"
+                  LastKnownName="GetSensorData"
+                  LastKnownLocation="SailingModel.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
